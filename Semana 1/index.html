@@ -4,10 +4,11 @@
     <title>Semana 1</title>
 </head>
 <body>
+    
     <h1>Buscador Google</h1>
 
-    <label for="text">Buscar</label>
-    <input type="text">
+    <label for="text">Buscar:</label>
+    <input type="text" style="border-radius: 20px;"><br>
 
     <label for="select">Idioma:</label>   
     <select name="lr">
@@ -15,6 +16,13 @@
         <option name="lr" value="lang_en">Inglês</option>
         <option name="lr" value="lang_es">Espanhol</option>
     </select><br>
-    
+
+    <label for="radio">País de Origem:</label> 
+        <input type="radio" name="cr" value="countryBR" checked>Brasil
+        <input type="radio" name="cr" value="countryGB">Reino Unido
+        <input type="radio" name="cr" value="countryES">Espanha   
+        <br>
+    <input type="submit" value="Buscar" style="padding: 5px;">
+
 </body>
 </html>
