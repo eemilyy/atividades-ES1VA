@@ -1,3 +1,5 @@
+<h1>Sistema de controle de versão | Segunda Atividade</h1>
+
 <p>Leia os Capítulos 1 e 2 do livro ProGit. Inicialmente, você deve ter uma conta ativa
 no GitHub. Considere o repositório atividade-scv para esta atividade. Siga os passos
 descritos abaixo:</p>
