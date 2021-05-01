@@ -4,6 +4,7 @@ tigres = 0
 macacos = 0
 pesotigres = 0
 cobras_venezuela = 0
+qtd = 0
 File.open("entradaQ3").each do |animal|           
     #animal.upcase == "PARAR\n" ? (arr << animal) : break
 
@@ -27,7 +28,7 @@ File.open("entradaQ3").each do |animal|
     p arr[0]
 
     macacos += 1 if arr[0] == "MACACO"
-    pesotigres += arr[1].to_f if arr[0] == "TIGRE"
+    pesotigres += arr[1].to_f and qtd += 1 if arr[0] == "TIGRE"
     cobras_venezuela += 1 if (arr[0] == "COBRA") and (arr[2] == "VENEZUELA")
     
     arr.clear
@@ -35,9 +36,10 @@ File.open("entradaQ3").each do |animal|
     end
 end
 
+p qtd
 #print arr
 
 p macacos
-p pesotigres if pesotigres
+p pesotigres/qtd if pesotigres != 0
 p cobras_venezuela
 
