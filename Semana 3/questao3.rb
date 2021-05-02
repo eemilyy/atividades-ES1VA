@@ -1,8 +1,8 @@
-arr = []
+arr = Array.new
 macacos = 0
-pesotigres = 0
-cobras_venezuela = 0
-qtd_tigres = 0
+pesoTigres = 0
+qtdTigres = 0
+cobrasVenezuela = 0
 
 File.open("entradaQ3").each do |animal|           
     if animal.chomp.upcase != "CONTINUAR" and animal.chomp.upcase != "PARAR"
@@ -10,8 +10,8 @@ File.open("entradaQ3").each do |animal|
         
     else
         macacos += 1 if arr[0] == "MACACO"
-        pesotigres += arr[1].to_f and qtd_tigres += 1 if arr[0] == "TIGRE"
-        cobras_venezuela += 1 if (arr[0] == "COBRA") and (arr[2] == "VENEZUELA")        
+        pesoTigres += arr[1].to_f and qtdTigres += 1 if arr[0] == "TIGRE"
+        cobrasVenezuela += 1 if (arr[0] == "COBRA") and (arr[2] == "VENEZUELA")        
         arr.clear        
     end
 
@@ -19,6 +19,5 @@ File.open("entradaQ3").each do |animal|
 end
 
 puts macacos
-qtd_tigres == 0 ? (puts '0.00') : (puts '%.2f' % (pesotigres/qtd_tigres)) 
-puts cobras_venezuela
-
+qtdTigres == 0 ? (puts '0.00') : (puts '%.2f' % (pesoTigres/qtdTigres)) 
+puts cobrasVenezuela
