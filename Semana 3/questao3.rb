@@ -1,12 +1,12 @@
 arr = Array.new
-macacos = 0
+macacos = 0 
 pesoTigres = 0
 qtdTigres = 0
 cobrasVenezuela = 0
 
 File.open("entradaQ3").each do |animal|           
     if animal.chomp.upcase != "CONTINUAR" and animal.chomp.upcase != "PARAR"
-        arr << animal.chomp.upcase        
+        arr << animal.chomp.upcase  #atribuindo o valor ao array      
         
     else
         macacos += 1 if arr[0] == "MACACO"
@@ -19,5 +19,5 @@ File.open("entradaQ3").each do |animal|
 end
 
 puts macacos
-qtdTigres == 0 ? (puts '0.00') : (puts '%.2f' % (pesoTigres/qtdTigres)) 
+qtdTigres == 0 ? (puts '0.00') : (puts '%.2f' % (pesoTigres/qtdTigres)) #definindo que deve ser 2 casas decimais
 puts cobrasVenezuela

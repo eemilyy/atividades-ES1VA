@@ -1,6 +1,6 @@
 pacientes = Hash.new
-tDNAquant = 0
-maiorTpaciente = 0
+tDNAquant = 0 # o somatório da quantidade de T no DNA
+maiorTpaciente = 0 # código do paciente com mais T no DNA
 
 File.open("entradaQ4").each do |linha|
     break if linha.split[0] == "9999"
@@ -10,10 +10,10 @@ File.open("entradaQ4").each do |linha|
     pacientes[codigoPaciente] = dnaPaciente
 end
 
-pacientes.each do |codigo, dna|
-    @contador = 0
+pacientes.each do |codigo, dna| #iterando no hash
+    @contador = 0 #criando uma instancia que ao finalizar o bloco ele é limpo
 
-    dna.split('').each do |c| 
+    dna.split('').each do |c| #iterando na string
         @contador += 1 if c == "T"
     end
     
