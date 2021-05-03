@@ -2,36 +2,29 @@ require 'time'
 
 class Time
     def humanize
-        horas = self.strftime("%H")
-        horas = horas.to_i
-
-        meiaNoite = self.strftime("%H")
-        meiaNoite = meiaNoite.to_i
-
-        minutos = self.strftime("%M")
-        minutos = minutos.to_f
-
+        horas = self.strftime("%H").to_i        
+        minutos = self.strftime("%M").to_i
         ampm = self.strftime("%P")
 
-        diferenca = minutos/15
+        diferenca = minutos/15.to_f
 
         if diferenca <= 0.5
-            if horas.to_s == "0"
-                "About 00:00"
+            if horas == 0
+                "About midnight"
             else  
                 "About " + horas.to_s + ":00 " + ampm
             end
         elsif diferenca > 0.5 and diferenca < 1.5
-        "About " + horas.to_s + ":15 " + ampm
+            horas == 0 ? "About 12:15 " + ampm : "About " + horas.to_s + ":15 " + ampm
         elsif diferenca > 1.5 and diferenca < 2.5
-        "About " + horas.to_s + ":30 " + ampm
+            horas == 0 ? "About 12:30 " + ampm : "About " + horas.to_s + ":30 " + ampm
         elsif diferenca > 2.5 and diferenca <= 3.5
-        "About " + horas.to_s + ":45 " + ampm
+            horas == 0 ? "About 12:45 " + ampm : "About " + horas.to_s + ":45 " + ampm
         else
-            if meiaNoite.to_i == 23
+            if horas == 23
                 "About midnight"
             else
-                "About "+(horas+1).to_s + " " +  ampm
+                "About " + (horas+1).to_s + " " +  ampm
             end
         end
     end
@@ -40,4 +33,3 @@ end
 File.open("entradaQ1").each do |linha|
     puts Time.parse(linha.chomp).humanize
 end
-
